@@ -256,7 +256,7 @@ ViewTreeObserver.OnTouchModeChangeListener {
 	Rect mListPadding = new Rect();
 
 	/**
-	 * Subclasses must retain their measure spec from onMeasure() into this member
+	 * Subclasses must retain their measure spec from measure() into this member
 	 */
 	int mWidthMeasureSpec = 0;
 

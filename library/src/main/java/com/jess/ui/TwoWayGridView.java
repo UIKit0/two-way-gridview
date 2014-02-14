@@ -281,7 +281,7 @@ public class TwoWayGridView extends TwoWayAbsListView {
 			setupGridType();
 		}
 		// Sets up mListPadding
-		mGridBuilder.onMeasure(widthMeasureSpec, heightMeasureSpec);
+		mGridBuilder.measure(widthMeasureSpec, heightMeasureSpec);
 	}
 
 	//TODO implement horizontal support
@@ -828,7 +828,7 @@ public class TwoWayGridView extends TwoWayAbsListView {
 		protected abstract void fillGap(boolean down);
 
 
-		protected abstract void onMeasure(int widthMeasureSpec, int heightMeasureSpec);
+		protected abstract void measure(int widthMeasureSpec, int heightMeasureSpec);
 
 		protected abstract void layoutChildren();
 
@@ -1593,12 +1593,12 @@ public class TwoWayGridView extends TwoWayAbsListView {
 		}
 
 		@Override
-		protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+		protected void measure(int widthMeasureSpec, int heightMeasureSpec) {
 			int widthMode = MeasureSpec.getMode(widthMeasureSpec);
 			int heightMode = MeasureSpec.getMode(heightMeasureSpec);
 			int widthSize = MeasureSpec.getSize(widthMeasureSpec);
 			int heightSize = MeasureSpec.getSize(heightMeasureSpec);
-			if (DEBUG) Log.i(TAG, "vertical onMeasure heightMode: " + heightMode);
+			if (DEBUG) Log.i(TAG, "vertical measure heightMode: " + heightMode);
 			if (widthMode == MeasureSpec.UNSPECIFIED) {
 				if (mColumnWidth > 0) {
 					widthSize = mColumnWidth + mListPadding.left + mListPadding.right;
@@ -1664,7 +1664,7 @@ public class TwoWayGridView extends TwoWayAbsListView {
 
 			setMeasuredDimension(widthSize, heightSize);
 			mWidthMeasureSpec = widthMeasureSpec;
-			if (DEBUG) Log.i(TAG, "Vertical onMeasure widthSize: " + widthSize + " heightSize: " + heightSize);
+			if (DEBUG) Log.i(TAG, "Vertical measure widthSize: " + widthSize + " heightSize: " + heightSize);
 		}
 
 		@Override
@@ -2842,12 +2842,12 @@ public class TwoWayGridView extends TwoWayAbsListView {
 
 
 		@Override
-		protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+		protected void measure(int widthMeasureSpec, int heightMeasureSpec) {
 			int widthMode = MeasureSpec.getMode(widthMeasureSpec);
 			int heightMode = MeasureSpec.getMode(heightMeasureSpec);
 			int widthSize = MeasureSpec.getSize(widthMeasureSpec);
 			int heightSize = MeasureSpec.getSize(heightMeasureSpec);
-			if (DEBUG) Log.i(TAG, "horizontal onMeasure heightMode: " + heightMode);
+			if (DEBUG) Log.i(TAG, "horizontal measure heightMode: " + heightMode);
 			if (heightMode == MeasureSpec.UNSPECIFIED) {
 				if (mRowHeight > 0) {
 					heightSize = mRowHeight + mListPadding.top + mListPadding.bottom;
@@ -2913,7 +2913,7 @@ public class TwoWayGridView extends TwoWayAbsListView {
 
 			setMeasuredDimension(widthSize, heightSize);
 			mWidthMeasureSpec = widthMeasureSpec;
-			if (DEBUG) Log.i(TAG, "Horizontal onMeasure widthSize: " + widthSize + " heightSize: " + heightSize);
+			if (DEBUG) Log.i(TAG, "Horizontal measure widthSize: " + widthSize + " heightSize: " + heightSize);
 		}
 
 
